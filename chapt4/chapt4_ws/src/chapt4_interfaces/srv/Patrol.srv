@@ -1,0 +1,8 @@
+float32 target_x # 目标x
+float32 target_y # 目标y
+# 上面的参数类型为chapt4_interfaces::srv::Patrol::Request
+---
+# 下面的参数类型为chapt4_interfaces::srv::Patrol::Response
+int8 SUCCESS = 1 # 表示成功的常量
+int8 FAIL = 0    # 表示失败的常量
+int8 result      # 处理结果

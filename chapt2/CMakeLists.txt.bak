@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.10)
+project(ros2_cpp CXX)
+
+find_package(rclcpp REQUIRED)
+message(STATUS ${rclcpp_INCLUDE_DIRS}) # 头文件及 rclcpp 依赖的头文件
+message(STATUS ${rclcpp_LIBRARIES}) # 库文件及 rclcpp 依赖的库文件
+
+# 可执行文件输出到项目根目录
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
+
+# 静态库输出位置
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
+
+# 动态库输出位置
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
+
+
+add_executable(ros2_cpp_node ./src/ros2_cpp_node.cpp)
+
+target_include_directories(ros2_cpp_node PUBLIC ${rclcpp_INCLUDE_DIRS}) # 头文件包含
+target_link_libraries(ros2_cpp_node ${rclcpp_LIBRARIES}) # 库文件链接
