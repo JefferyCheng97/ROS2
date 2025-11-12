@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'fishbot_application'
+package_name = 'autopatrol_robot'
 
 setup(
     name=package_name,
@@ -14,7 +14,7 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='jeffery',
-    maintainer_email='jeffery@todo.todo',
+    maintainer_email='chengjianfei4505@ahut.edu.cn',
     description='TODO: Package description',
     license='Apache-2.0',
     extras_require={
@@ -24,10 +24,6 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'init_robot_pose = fishbot_application.init_robot_pose:main',
-            'get_robot_pose = fishbot_application.get_robot_pose:main',
-            'nav_to_pose = fishbot_application.nav_to_pose:main',
-            'waypoint_flollower = fishbot_application.waypoint_flollower:main',
         ],
     },
 )
