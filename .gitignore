@@ -1,9 +1,9 @@
-# 忽略文件夹: build/install/log 
+# 忽略文件夹: build/ install/ log/ 
 **/build/
 **/install/
 **/log/
 
-# 忽略 .vscode 和 .git
+# 忽略文件夹: .vscode 和 .git
 **/.git/
 **/.vscode/
 
