@@ -21,4 +21,29 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
+include_directories(include)
+# ================添加库文件=====================
+add_library(spin_motion_controller SHARED src/spin_motion_controller.cpp)
+ament_target_dependencies(spin_motion_controller pluginlib)
+
+add_executable(test_plugin src/test_plugin.cpp)
+ament_target_dependencies(test_plugin pluginlib)
+
+install(TARGETS test_plugin
+    DESTINATION lib/${PROJECT_NAME}
+)
+
+install(TARGETS spin_motion_controller
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+)
+
+install(DIRECTORY include/
+  DESTINATION include/
+)
+
+# 导出插件描述文件
+pluginlib_export_plugin_description_file(motion_control_system spin_motion_plugins.xml)
+
 ament_package()
